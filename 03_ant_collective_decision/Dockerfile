@@ -26,11 +26,11 @@ RUN R -e "install.packages('devtools')"
 RUN R -e "devtools::install_github('swarm-lab/teachR')"
 
 # install dependencies of the opinion_dynamic app
-RUN R -e "install.packages(c('ggplot2', 'simecol', 'dplyr', 'scales', 'gridExtra'), repos='https://cloud.r-project.org/')"
+RUN R -e "install.packages(c('ggvis', 'deSolve'), repos='https://cloud.r-project.org/')"
 
 # copy the Rprofile to the image
 COPY Rprofile.site /usr/lib/R/etc/
 
 EXPOSE 3939
 
-CMD ["R", "-e teachR::run_app('opinion_dynamics')"]
+CMD ["R", "-e teachR::run_app('ant_collective_decision')"]

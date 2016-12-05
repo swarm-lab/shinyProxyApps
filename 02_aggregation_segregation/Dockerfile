@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
 #     libmpfr-dev
 
 # basic shiny functionality
-RUN R -e "install.packages(c('shiny', 'rmarkdown'), repos='https://cloud.r-project.org/')"
+RUN R -e "install.packages(c('shiny', 'shinythemes', 'rmarkdown'), repos='https://cloud.r-project.org/')"
 
 # install teachR package
 RUN R -e "install.packages('devtools')"
